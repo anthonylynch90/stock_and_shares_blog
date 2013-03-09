@@ -1,20 +1,79 @@
 @import "_bootstrap";
+/*
+*variables
+*/
+$lightGrey: #999;
+$fullWidth: 100%;
 
+
+
+h1, h2, h3, h4, h5, h6{
+	line-height: 1;
+}
 html {
 overflow-y: scroll;
+width: $fullWidth !important;
 }
 body {
-padding-top: 60px;
+padding-top: 30px;
+width: $fullWidth !important;
 }
 section {
+width: $fullWidth;
 overflow: auto;
 }
 textarea {
 resize: vertical;
 }
+
 .center {
+width: $fullWidth !important;
 text-align: center;
+	.center h1 {
+	margin-bottom: 10px;
+	}
 }
-.center h1 {
-margin-bottom: 10px;
+
+
+/* header */
+#image {
+float: left;
+}
+
+#logo {
+float: left;
+margin-right: 10px;
+font-size: 1.7em;
+color: #fff;
+text-transform: uppercase;
+letter-spacing: -1px;
+padding-top: 9px;
+font-weight: bold;
+line-height: 1;
+	&:hover {
+	color: #fff;
+	text-decoration: none;
+	}
+}
+
+/* footer */
+footer {
+margin-top: 45px;
+padding-top: 5px;
+border-top: 1px solid #eaeaea;
+color: $lightGrey;
+	 a {
+	color: #555;
+		&:hover {
+		color: #222;
+		}
+	}
+	ul {
+	float: right;
+	list-style: none;
+	}
+	ul li {
+	float: left;
+	margin-right: 10px;
+	}
 }
