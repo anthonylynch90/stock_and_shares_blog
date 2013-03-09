@@ -8,7 +8,7 @@ gem 'rails', '3.2.8'
 gem 'sqlite3'
 
 group :development, :test do 
-	gem 'rspec-rails'
+	gem 'rspec-rails', '2.9.0'
 end
 
 
@@ -25,7 +25,7 @@ group :assets do
 end
 
 group :test do 
-	gem 'capybara'
+	gem 'capybara', '1.1.2'
 end
 
 gem 'jquery-rails'
