@@ -6,7 +6,7 @@ describe "Static pages" do
     before {visit home_path}
 	it {should have_selector('h1', text: 'Welcome')}
 	it {should have_selector('title', text: 'Welcome')}
-	it {should have_text('Sign up now')}
+	it {should have_content('Sign up now')}
   end
   
   describe "About page" do
