@@ -1,6 +1,8 @@
 StockAndShares::Application.routes.draw do
  
   
+  match '/signup', to: "users#new"
+
   match '/home', to: "static_pages#home"
 
   match '/help', to: "static_pages#help"
