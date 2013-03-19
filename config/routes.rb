@@ -1,5 +1,4 @@
 StockAndShares::Application.routes.draw do
- 
   
   match '/signup', to: "users#new"
 

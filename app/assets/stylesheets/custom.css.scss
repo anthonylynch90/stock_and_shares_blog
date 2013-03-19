@@ -5,7 +5,11 @@
 $lightGrey: #999;
 $fullWidth: 100%;
 
-
+@mixin box_sizing {
+-mox-box-sizing: border-box;
+-webkit-box-sizing: border-box;
+box-sizing: border-box;
+}
 
 h1, h2, h3, h4, h5, h6{
 	line-height: 1;
@@ -22,6 +26,30 @@ section {
 width: $fullWidth;
 overflow: auto;
 }
+
+aside{
+	section{
+	padding:10px 0;
+	border-top:1px solid $lightGrey;
+	&:first-child{
+		border:0;
+		padding-top:0;
+	}
+	span{
+		display:block;
+		margin-bottom:3px;
+		line-height:1;
+	}
+	h1{
+		font-size:0.6em;
+		text-align:left;
+		letter-spacing: -1px;
+		margin-bottom:3px;
+	}
+	}
+}
+
+
 textarea {
 resize: vertical;
 }
@@ -76,4 +104,41 @@ color: $lightGrey;
 	float: left;
 	margin-right: 10px;
 	}
+}
+
+.debug_dump{
+clear: both;
+float:left;
+width:100%;
+margin-top:45px;
+@include box_sizing;
+}
+
+label{
+	float:left;
+	font-weight:bold;
+}
+
+input, textarea, select, .uneditable-input{
+border: 1px solid #bbb;
+width: 100%;
+float:left;
+text-align:left;
+padding:10px;
+height:auto;
+margin-bottom:15px;
+@include box-sizing;
+}
+
+#error_explanation {
+color:#f00;
+	ul{
+	list-style:none;
+	margin:0 0 18px 0;
+	}
+}
+
+.field_with_errors{
+@extend .control-group;
+@extend .error;
 }

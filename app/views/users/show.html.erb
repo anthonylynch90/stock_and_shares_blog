@@ -1,15 +1,15 @@
-<p id="notice"><%= notice %></p>
+<%provide(:title, @user.name)%>
 
-<p>
-  <b>Name:</b>
-  <%= @user.name %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class = "center hero-unit">
+	<div class = "row">
+		<aside class="span4">
+			<section>
+				<h1>
+					<%= image_tag("profile.jpg", size: "160x160")%>
+					<%= @user.name%>
+				</h1>
+			</section>
+		</aside>
+	</div>
+	
+</div>
