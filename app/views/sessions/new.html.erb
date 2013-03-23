@@ -1,0 +1,30 @@
+<% provide(:title, "Sign in")%>
+<div class = "center hero-unit">
+	<% unless flash[:error].blank? %>
+		  <div class="alert-message alert-error">
+			<%= content_tag :div, flash[:error] %>
+		  </div>
+	<% end %>
+	<h1>Sign in</h1>	
+	<div class="row">
+		<div class="span6 offset3">
+			<div>
+				<%=form_for(:session, url: sessions_path) do |f|%>
+					<%= f.label :email%>
+					<%= f.text_field :email%>
+					
+					<%= f.label :password%>
+					<%= f.password_field :password%>
+					
+					<%= f.submit "Sign in", class:"btn btn-large btn-primary"%>
+					
+				<%end%>
+			</div>
+			<div class = "register">
+				<h4>New User?<%=link_to "Sign up now!", signup_path%></h4>
+			</div>
+			
+		</div>
+		
+	</div>
+</div>
