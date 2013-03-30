@@ -3,6 +3,8 @@ StockAndShares::Application.routes.draw do
 	root :to => 'sessions#new'
   
   match '/signup', to: "users#new"
+  
+  match '/users', to: "users#index"
 
   match '/home', to: "static_pages#home"
 
@@ -13,8 +15,6 @@ StockAndShares::Application.routes.draw do
   resources :users
   
   resources :sessions, only: [:new, :create, :destroy]
-  
-  match '/signup', to: "users#new"
 
   match '/signin', to: "sessions#new"
   
