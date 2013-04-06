@@ -7,7 +7,7 @@ before_filter :correct_user, only: [:edit, :update]
   end
   
   def index
-	@users = User.all
+	@users = User.paginate(page: params[:page])
   end
   
   def new
@@ -38,6 +38,12 @@ before_filter :correct_user, only: [:edit, :update]
 	end
   end
   
+  def destroy
+	User.find(params[:id]).destroy
+	flash[:success] = "User destroyed"
+	redirect_to user_path
+  end
+  
   private
   
   def signed_in_user
@@ -51,4 +57,5 @@ before_filter :correct_user, only: [:edit, :update]
 	@user = User.find(params[:id])
 	redirect_to(root_path) unless current_user? @user
   end
+  
 end
